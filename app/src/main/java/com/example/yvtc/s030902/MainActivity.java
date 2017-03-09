@@ -5,12 +5,14 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
+import android.widget.RatingBar;
 import android.widget.SeekBar;
 
 public class MainActivity extends AppCompatActivity {
     ProgressBar pb;
     ProgressBar pb2;
     SeekBar sb;
+    RatingBar rb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         pb = (ProgressBar) findViewById(R.id.progressBar);
         pb2 = (ProgressBar) findViewById(R.id.progressBar2);
         sb = (SeekBar) findViewById(R.id.seekBar);
-
+        rb = (RatingBar) findViewById(R.id.ratingBar);
 
         sb.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
@@ -37,6 +39,14 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        rb.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+            @Override
+            public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
+                Log.d("RB", "" + rating + "," + ratingBar.getProgress());
+            }
+        });
+
     }
 
     public void click1(View v)
@@ -57,5 +67,11 @@ public class MainActivity extends AppCompatActivity {
     public void click4(View v)
     {
         Log.d("dan.w test: SB", "" + sb.getProgress());
+    }
+
+    public void click5(View v)
+    {
+        Log.d("dan.w test: RB", "" + rb.getProgress());
+
     }
 }

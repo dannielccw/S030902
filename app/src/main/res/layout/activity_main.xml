@@ -72,4 +72,20 @@
         android:layout_alignParentEnd="true"
         android:id="@+id/button4"
         android:onClick="click4" />
+
+    <RatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button4"
+        android:layout_toStartOf="@+id/button2"
+        android:id="@+id/ratingBar" />
+
+    <Button
+        android:text="Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ratingBar"
+        android:layout_alignEnd="@+id/ratingBar"
+        android:id="@+id/button5"
+        android:onClick="click5" />
 </RelativeLayout>
